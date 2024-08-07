@@ -1,0 +1,14 @@
+<%- include("partials/header"); %>
+
+<div class="login-container">
+    <p><b>ID:</b><%= data.id %></p>
+    <p><b>Title:</b><%= data.title %></p>
+    <form method="post" action="/posts/<%= data.id %>?_method=PATCH">
+    <input type="text" name="authore" placeholder="author name to edit for title">
+    <br><br>
+    <button type="submit">submit</button>
+    </form>
+</div>
+
+
+<%- include("partials/footer"); %>

@@ -1,0 +1,21 @@
+<%- include("partials/header"); %>
+<div class="newb">
+    <button><a href="http://localhost:3038/items/new" style="text-decoration: none;">New Book</a></button>
+</div>
+<div class="outer">
+<% for(item of items){ %>
+    <div class="container-item">
+    <p><b>Id:</b><%= item.id %></p>
+    <p><b>Title:</b><%= item.title %></p>
+    <p><b>Author:</b><%= item.author %> </p>
+    <button><a href="http://localhost:3038/items/<%= item.id %>/edit" style="text-decoration: none;" >Edit</a></button>
+<button><a href="http://localhost:3038/items/<%= item.id %>" style="text-decoration: none;">Detail</a></button>
+    <br><br>
+    <form method="post" action="/posts/<%= item.id %>?_method=DELETE">
+        <button type="submit">Delete</button>
+    </form>
+    </div>
+        <% } %>
+</div>
+<%- include("partials/footer"); %>
+
